@@ -1,0 +1,26 @@
+import { Pagamento } from "./pagamento.js";
+
+export class PagamentoCartao extends Pagamento{
+
+    #ultimosNum;
+    #parcelas;
+
+
+    constructor(valor, ultimosNum, parcelas){
+        super(valor);
+        this.#ultimosNum = ultimosNum;
+        this.#parcelas = parcelas;
+    }
+
+    get ultimosNum(){
+        return this.#ultimosNum
+    }
+
+    get parcelas(){
+        return this.#parcelas
+    }
+
+    processarPag(){
+        console.log(`Enviar dados do cartao para a operadora ${this.#ultimosNum} em ${this.#parcelas} parcelas`);
+    }
+}
